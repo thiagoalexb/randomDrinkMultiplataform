@@ -1,0 +1,61 @@
+import kotlin.String;
+import kotlin.collections.List;
+
+CREATE TABLE FavoriteDrink (
+id TEXT PRIMARY KEY NOT NULL,
+drink_name TEXT NOT NULL,
+drink_alternative TEXT,
+tags TEXT AS List<String>,
+video_url TEXT,
+category TEXT,
+iba TEXT,
+alcoholic TEXT,
+glass_type TEXT,
+instructions TEXT,
+drink_thumb TEXT,
+ingredients TEXT AS List<String>,
+measures TEXT AS List<String>,
+image_url TEXT,
+image_attribution TEXT,
+date_modified TEXT);
+
+insertFavoriteDrink:
+INSERT INTO FavoriteDrink(
+id,
+drink_name,
+drink_alternative,
+tags,
+video_url,
+category,
+iba,alcoholic,
+glass_type,
+instructions,
+drink_thumb,
+ingredients,
+measures,
+image_url,
+image_attribution,
+date_modified)
+VALUES (?,
+?,
+?,
+?,
+?,
+?,
+?,
+?,
+?,
+?,
+?,
+?,
+?,
+?,
+?,
+?);
+
+deleteFavoriteDrink:
+DELETE FROM FavoriteDrink
+WHERE id = ?;
+
+getAllFavoriteDrinks:
+SELECT FavoriteDrink.* FROM FavoriteDrink;
